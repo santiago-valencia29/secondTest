@@ -1,0 +1,48 @@
+<app-layout>
+  <div fxLayout="column" class="container-fluid min-vh-100">
+    <h4 class="mt-3 animate__animated animate__fadeInDown">
+      Libros Más Solicitados
+    </h4>
+
+    <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px">
+      <div fxFlex="50">
+        <div
+          fxLayout="row"
+          *ngFor="let book of topBooks; let i = index"
+          class="rank-item animate__animated animate__fadeInDown"
+          [ngClass]="getRankItemClass(i)"
+        >
+          <div class="rank-position">{{ i + 1 }}</div>
+
+          <div class="details">
+            <h6>{{ book.title }}</h6>
+            <p>{{ book.author }}</p>
+            <p>Ventas: {{ book.salesCount }}</p>
+          </div>
+
+          <div>
+            <img
+              [src]="book.imageLink"
+              alt="Portada del libro"
+              class="book-image"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="animate__animated animate__fadeInDown" fxFlex="50">
+        <canvas
+          class="chart-container"
+          baseChart
+          [data]="barChartData"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [type]="'bar'"
+        >
+        </canvas>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</app-layout>

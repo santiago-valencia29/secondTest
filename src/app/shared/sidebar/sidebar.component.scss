@@ -1,0 +1,65 @@
+@import 'src/app/styles/colors';
+@import 'src/app/styles/font';
+@import 'src/app/styles/variables';
+
+mat-list {
+  border-bottom: 1px solid $gray-80;
+  width: $sidebar-width;
+  padding-bottom: 16px;
+
+  & mat-nav-list {
+    cursor: pointer;
+    color: $sidebar-font-color;
+    width: auto;
+    padding-left: 15px;
+    &.active {
+      color: $sidebar-font-color-active;
+      background-color: $sidebar-background-color-active;
+      outline: none;
+
+      & mat-icon {
+        color: $sidebar-icon-color-active ;
+      }
+    }
+
+    &:hover {
+      background-color: $sidebar-background-color-hover;
+
+      & mat-icon {
+        color: $sidebar-icon-color-active ;
+      }
+    }
+
+    &:focus {
+      outline: none;
+
+    }
+  }
+}
+
+.icon-text-container {
+  display: flex;
+  align-items: center;
+}
+
+.mat-icon {
+  margin-right: 10px;
+  color: $sidebar-icon-color;
+}
+
+.sidebar-title {
+  color: $sidebar-title-color;
+  font-size: $fs-normal;
+  text-transform: uppercase;
+  margin-top: 32px;
+  margin-left: 24px;
+  margin-bottom: 16px;
+}
+
+mat-list mat-nav-list.ui-element {
+  padding-left: 40px;
+}
+
+.link{
+  text-decoration: none;
+}

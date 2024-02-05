@@ -1,0 +1,38 @@
+@import 'src/app/styles/colors';
+@import 'src/app/styles/variables';
+
+.footer {
+  margin-top: 40px;
+  background-color: $marshmallow-tertiary;
+  padding: 24px 24px 24px 24px;
+
+  &__link-item {
+    cursor: pointer;
+    padding-right: 15px;
+    padding-left: 15px;
+    color: $footer-link-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.mat-mini-fab {
+  background-color: inherit;
+  width: 46px;
+  height: 46px;
+
+  &:hover {
+    background-color: $footer-icon-background-color-hover;
+  }
+}
+
+.mat-icon {
+  color: $footer-icon-color;
+}
+
+button {
+  background-color: $marshmallow-tertiary;
+}

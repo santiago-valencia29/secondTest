@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="mb-1" fxLayout="row" fxLayoutAlign="space-between center">
+    <h5 class="pt-2"></h5>
+    <mat-icon (click)="onClose()" matTooltip="Cerrar" class="icon-close-popup mt-2"
+      >close</mat-icon
+    >
+  </div>
+</div>
+
+<div class="container-fluid">
+  <mat-card>
+    <mat-card-header>
+      <div  class="header-image">
+        <img [src]="data.imageLink" alt="Avatar">
+      </div>
+      <mat-card-title-group>
+        <mat-card-title>{{ data.title }}</mat-card-title>
+        <mat-card-subtitle>{{ data.author }}</mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content class="custom-card-content">
+      <p><mat-icon class="icon">info</mat-icon> {{ data.description }}</p>
+      <p><strong>Fecha de publicación:</strong> {{ data.publicationDate | date: 'dd/MM/yyyy' }}</p>
+      <p><strong>Número de páginas:</strong> {{ data.pages }}</p>
+      <p><strong>ISBN:</strong> {{ data.isbn }}</p>
+      <p><strong>Precio:</strong> {{ data.price }}</p>
+      <p><strong>Stock disponible:</strong> {{ data.stock }}</p>
+      <p><strong>Ventas totales:</strong> {{ data.salesCount }}</p>
+      <p><strong>País:</strong> {{ data.country }}</p>
+    </mat-card-content>
+    <div class="m-3" flexlayout="row" fxLayoutAlign="end">
+      <button mat-button (click)="onClose()">Cerrar</button>
+    </div>
+  </mat-card>
+</div>

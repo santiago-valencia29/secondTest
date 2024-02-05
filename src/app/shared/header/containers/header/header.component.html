@@ -1,0 +1,36 @@
+<mat-toolbar class="header">
+  <div class="header__title">
+    <button class="header__title-button" mat-mini-fab (click)="openMenu()">
+      <mat-icon *ngIf="!isMenuOpened" class="header__title-button-icon"
+        >menu
+      </mat-icon>
+      <mat-icon *ngIf="isMenuOpened" class="header__title-button-icon"
+        >arrow_back</mat-icon
+      >
+    </button>
+
+    <div class="logo">
+      <mat-icon
+      >auto_stories</mat-icon
+    >
+      <!-- <img class="img-fluid" src="assets/logo.png" /> -->
+    </div>
+
+    <h6 *ngIf="!showIconTitleResponsive" class="header__title-text">
+      Cultura Literaria
+    </h6>
+  </div>
+
+  <div class="header-toolbar">
+    <a
+      mat-raised-button
+      routerLink="/books"
+      routerLinkActive="router-link-active"
+      class="unlock-button"
+      >Lista de libros</a
+    >
+    <app-notifications></app-notifications>
+    <app-email [emails]="emails$ | async"></app-email>
+    <app-user [user]="user$ | async"></app-user>
+  </div>
+</mat-toolbar>

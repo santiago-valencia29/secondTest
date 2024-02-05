@@ -1,0 +1,51 @@
+.header-image {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  margin-right: 10px;
+
+}
+
+.header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+mat-card-title,
+mat-card-subtitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+mat-card-content {
+  line-height: 1.5;
+}
+
+mat-card-content p {
+  margin-bottom: 0.3rem;
+}
+
+
+mat-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mat-card-content p strong {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.mat-card-content p span {
+  color: #666;
+}
+
+.icon {
+  padding-top: 6px;
+  font-size: 18px;
+}
+
+

@@ -1,0 +1,393 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+
+@import 'src/app/styles/colors';
+@import 'src/app/styles/variables';
+@import 'src/app/styles/font';
+
+// bootstrap V5
+@import 'bootstrap/scss/bootstrap';
+
+// Animate.css
+@import 'animate.css';
+
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$sencondTest-primary: mat.define-palette(mat.$indigo-palette);
+$sencondTest-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$sencondTest-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$sencondTest-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $sencondTest-primary,
+      accent: $sencondTest-accent,
+      warn: $sencondTest-warn
+    )
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($sencondTest-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+// -- Config Font personalized
+
+// @font-face {
+//   font-family: 'MyFont';
+//   src: url('../src/assets/fonts/Rubik/Rubik-Black.ttf');
+// }
+// body { margin: 0; font-family: 'MyFont' }
+
+// --
+
+// -- titles size
+
+.mat-h1,
+.mat-headline,
+.mat-typography h1 {
+  font-weight: 400;
+  font-size: 48px;
+}
+
+.mat-h2,
+.mat-headline,
+.mat-typography h2 {
+  font-weight: 400;
+  font-size: 36px;
+}
+
+.mat-h3,
+.mat-headline,
+.mat-typography h3 {
+  font-weight: 400;
+  font-size: 26px;
+}
+
+.mat-h4,
+.mat-headline,
+.mat-typography h4 {
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.mat-h5,
+.mat-headline,
+.mat-typography h5 {
+  font-weight: 400;
+  font-size: 21px;
+  margin: 0 0 5px;
+}
+
+.mat-h6,
+.mat-headline,
+.mat-typography h6 {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.mat-body p,
+.mat-body-1 p,
+.mat-typography p {
+  margin-bottom: 16px;
+  line-height: normal;
+}
+
+// --
+
+// -- modify components material
+
+mat-form-field {
+  font-size: 14px;
+  height: 69px;
+}
+
+// -- modify components
+
+mat-form-field {
+  font-size: 14px;
+}
+
+.mat-mdc-table .mdc-data-table__header-row {
+  height: 26px;
+  background: rgb(60, 75, 158);
+}
+
+.mat-sort-header-content {
+  color: white;
+}
+
+.mdc-data-table__cell {
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid rgb(20, 13, 13, 0.6);
+  border-bottom: 1px solid rgb(20, 13, 13, 0.6) !important;
+}
+
+.mdc-data-table__header-cell {
+  border: 1px solid rgba(209, 209, 209, 0.6);
+}
+
+.mat-mdc-paginator {
+  background: transparent !important;
+  color: $black;
+  font-size: 12px;
+}
+
+.mat-mdc-paginator-icon {
+  color: $white;
+}
+
+.mat-mdc-paginator-container {
+  flex-wrap: nowrap !important;
+  justify-content: flex-end !important;
+}
+
+.mat-mdc-paginator-range-label {
+  margin: 0px !important;
+  margin-top: 10px !important;
+}
+
+.mat-mdc-paginator-page-size-select {
+  width: 80px !important;
+  height: 20px;
+}
+
+button.mat-fab .mat-button-wrapper {
+  padding: 0;
+}
+
+.mat-card {
+  color: $card-font-color;
+  margin: 16px;
+}
+
+.mat-card-title p {
+  font-size: 21px;
+  font-weight: 400;
+  color: $card-title-font-color;
+}
+
+mat-toolbar.page-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 24px 16px 24px;
+  background: none;
+  height: auto;
+
+  @media (max-width: $small) {
+    flex-direction: column;
+    align-items: baseline;
+  }
+}
+
+.mat-toolbar h1 {
+  font-weight: 400;
+  font-size: 38.4px;
+  color: $toolbar-title-font-color;
+  line-height: 1;
+  letter-spacing: -0.2186px;
+
+  @media (max-width: $small) {
+    white-space: normal;
+  }
+}
+
+mat-tab-header .mat-tab-label,
+.mat-tab-link {
+  text-transform: uppercase;
+  color: $tabs-header-font-color;
+  font-weight: $fw-normal;
+  width: 50%;
+  min-width: 0;
+  padding: 0;
+  opacity: 1;
+}
+
+mat-tab-header .mat-tab-label-active {
+  color: $tabs-header-font-color-active;
+}
+
+mat-tab-group.mat-tab-group.mat-primary .mat-ink-bar {
+  background-color: $tabs-ink-bar-color;
+}
+
+mat-tab-body div.mat-tab-body-content {
+  overflow: hidden;
+}
+
+.mat-raised-blue {
+  background-color: $blue;
+  color: $white;
+}
+
+.mat-raised-red {
+  background-color: $red;
+  color: $white;
+}
+
+.mat-raised-yellow {
+  background-color: $yellow;
+  color: $white;
+}
+
+.fab-blue {
+  background-color: $blue !important;
+}
+
+.fab-red {
+  background-color: $red !important;
+}
+
+button.mat-mini-fab .mat-button-wrapper {
+  padding: 0;
+  vertical-align: middle;
+  margin-left: 1px;
+  margin-bottom: 2px;
+}
+
+button.mat-mini-fab {
+  height: 32px;
+  width: 32px;
+}
+
+.mat-button-focus-overlay {
+  background-color: transparent !important;
+}
+
+div.mat-menu-panel {
+  margin-top: 20px;
+}
+
+.fa {
+  font-size: 1.5em;
+}
+
+//scroll matDialog
+.cdk-global-overlay-wrapper {
+  overflow: auto;
+  // pointer-events: auto;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 7px;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+::-webkit-scrollbar-track {
+  background-color: $scrollbar-track-color;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: $scrollbar-track-piece-color;
+}
+::-webkit-scrollbar-thumb {
+  height: 50px;
+  background-color: $light-grey;
+  border-radius: 36px;
+}
+::-webkit-scrollbar-corner {
+  background-color: $scrollbar-corner-color;
+}
+
+// --
+
+// -- icon close popup
+.icon-close-popup {
+  &:hover {
+    cursor: pointer;
+    font-weight: $fw-bold;
+    color: $black;
+  }
+}
+
+// --
+
+// -- Style swalAlert 2
+.swal2-popup.swal2-toast {
+  padding: 0px 8px 0px 8px !important;
+}
+
+.swal2-popup.swal2-toast .swal2-title {
+  margin: 8px 0px 0px 8px !important;
+  font-weight: $fw-bold;
+  color: $white;
+}
+
+.swal2-popup.swal2-toast .swal2-html-container {
+  margin: 0px 0px 6px 8px !important;
+  color: $white;
+}
+
+.swal2-icon.swal2-warning {
+  color: gray !important;
+}
+
+.swal2-icon.swal2-info {
+  border-color: $marshmallow-tertiary !important;
+  color: $marshmallow-tertiary !important;
+}
+
+.swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+  background-color: $white !important;
+}
+
+.swal2-popup.swal2-toast .swal2-close {
+  color: $white;
+}
+
+.swal2-loader {
+  border-color: $marshmallow-template transparent $marshmallow-template
+    transparent !important;
+}
+
+.swal2-html-container {
+  margin: 0 !important;
+  font-size: $fs-normal !important;
+}
+
+.swal2-popup .swal2-styled:focus {
+  box-shadow: none !important;
+}
+
+.swal2-title {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.swal2-styled.swal2-confirm {
+  font-size: $fs-small !important;
+}
+
+.swal2-styled.swal2-cancel {
+  font-size: $fs-small !important;
+}
+
+// --
